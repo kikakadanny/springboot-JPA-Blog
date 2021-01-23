@@ -31,7 +31,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id; // 자동채번 시퀸스
 
-	@Column(nullable = false, length = 30)
+	@Column(nullable = false, length = 100, unique = true)
 	private String username; // ID
 
 	@Column(nullable = false, length = 100)
@@ -43,6 +43,8 @@ public class User {
 	//@ColumnDefault("'user'")
 	@Enumerated(EnumType.STRING)
 	private RoleType role; // ADMIN,USER
+	
+	private String oauth; //kakap, goole
 
 	@CreationTimestamp
 	private Timestamp createDate;
